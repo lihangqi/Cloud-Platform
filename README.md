@@ -6,19 +6,8 @@ Cloud`微`服务`化`开发平台`，具有统一授权、认证后台管理系�
 2.1.2`以及`Spring Cloud (Greenwich.RELEASE)
 `相关核心组件，采用`Nacos`注册和配置中心，集成流量卫兵`Sentinel`，前端采用`vue-element-admin`组件，`Elastic Search`自行集成。
 
-### QQ群号：169824183(1)、661605461(2)、592462556(3)
-
-### 开源用户登记，宣传用：[点击打开](https://gitee.com/geek_qi/cloud-platform/issues/II9SP)
-
-### 最新更新日志，[点击查看](https://gitee.com/geek_qi/cloud-platform/wikis/Cloud-Platform更新日志?sort_id=320050)
-
-### 基础文档，[点击查看](https://gitee.com/geek_qi/cloud-platform/wikis/Home)
-
 # 模块说明
 ![架构图](https://images.gitee.com/uploads/images/2019/0528/205306_9a8b8d83_1899222.png "1.png")
-
-## 公众号
-![输入图片说明](https://images.gitee.com/uploads/images/2019/0712/091503_c2618a08_547642.jpeg "qrcode_for_gh_e5a084d37c0d_258 (2).jpg")
 
 ### 架构摘要
 #### 服务鉴权
