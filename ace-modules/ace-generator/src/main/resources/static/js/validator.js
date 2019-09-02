@@ -94,17 +94,17 @@ layui.define(function(exports) {
 		},
 		//验证字符串包含内容  
 		IsStringInclude: function(input, withEnglishCharacter, withNumber, withChineseCharacter) {
-			if(!Boolean(withEnglishCharacter) && !Boolean(withNumber) && !Boolean(withChineseCharacter)) {
+			if(!withEnglishCharacter && !withNumber && !withChineseCharacter) {
 				return false; //如果英文字母、数字和汉字都没有，则返回false  
 			}
 			var pattern = '^[';
-			if(Boolean(withEnglishCharacter)) {
+			if(withEnglishCharacter) {
 				pattern += 'a-zA-Z';
 			}
-			if(Boolean(withNumber)) {
+			if(withNumber) {
 				pattern += '0-9';
 			}
-			if(Boolean(withChineseCharacter)) {
+			if(withChineseCharacter) {
 				pattern += '\\u4E00-\\u9FA5';
 			}
 			pattern += ']+$';
@@ -141,11 +141,11 @@ layui.define(function(exports) {
 				return false; //如果英文字母、数字和汉字都没有，则返回false  
 			}
 			var pattern = '^[';
-			if(Boolean(withEnglishCharacter))
+			if(withEnglishCharacter)
 				pattern += 'a-zA-Z';
-			if(Boolean(withNumber))
+			if(withNumber)
 				pattern += '0-9';
-			if(Boolean(withChineseCharacter))
+			if(withChineseCharacter)
 				pattern += '\\u4E00-\\u9FA5';
 			pattern += ']{' + lengthBegin + ',' + lengthEnd + '}$';
 			var regex = new RegExp(pattern);

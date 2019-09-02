@@ -414,7 +414,7 @@
         if (block != null) {
           block = block.slice(0);
         }
-        if (!!(matches = line.match(/^(\s*)(~|`){3,}([^`~]*)$/i))) {
+        if (matches = line.match(/^(\s*)(~|`){3,}([^`~]*)$/i)) {
           if (this.isBlock('code')) {
             isAfterList = block[3][2];
             if (isAfterList) {
@@ -435,13 +435,13 @@
           this.setBlock(key);
           continue;
         }
-        if (!!(matches = line.match(new RegExp("^\\s*<(" + special + ")(\\s+[^>]*)?>", 'i')))) {
+        if (matches = line.match(new RegExp("^\\s*<(" + special + ")(\\s+[^>]*)?>", 'i'))) {
           tag = matches[1].toLowerCase();
           if (!(this.isBlock('html', tag)) && !(this.isBlock('pre'))) {
             this.startBlock('html', key, tag);
           }
           continue;
-        } else if (!!(matches = line.match(new RegExp("</(" + special + ")>\\s*$", 'i')))) {
+        } else if (matches = line.match(new RegExp("</(" + special + ")>\\s*$", 'i'))) {
           tag = matches[1].toLowerCase();
           if (this.isBlock('html', tag)) {
             this.setBlock(key).endBlock();
@@ -508,12 +508,12 @@
               for (m = 0, len2 = rows.length; m < len2; m++) {
                 row = rows[m];
                 align = 'none';
-                if (!!(matches = row.match(/^\s*(:?)\-+(:?)\s*$/))) {
+                if (matches = row.match(/^\s*(:?)\-+(:?)\s*$/)) {
                   if (!!matches[1] && !!matches[2]) {
                     align = 'center';
-                  } else if (!!matches[1]) {
+                  } else if (matches[1]) {
                     align = 'left';
-                  } else if (!!matches[2]) {
+                  } else if (matches[2]) {
                     align = 'right';
                   }
                 }
@@ -659,7 +659,7 @@
       if (str.match(/^\s*$/)) {
         return '';
       } else {
-        return '<pre data-start="1" class="line-numbers"><code' + (!!lang ? " class=\"" + lang + "\"" : '') + (!!rel ? " rel=\"" + rel + "\"" : '') + '>' + (htmlspecialchars(str)) + '</code></pre>'; // class="line-numbers" 代码高亮 @Robbie
+        return '<pre data-start="1" class="line-numbers"><code' + (lang ? " class=\"" + lang + "\"" : '') + (rel ? " rel=\"" + rel + "\"" : '') + '>' + (htmlspecialchars(str)) + '</code></pre>'; // class="line-numbers" 代码高亮 @Robbie
       }
     };
 
@@ -742,7 +742,7 @@
               html += '<li>' + (this.parse(leftLines.join("\n"))) + '</li>';
             }
             if (lastType !== type) {
-              if (!!lastType) {
+              if (lastType) {
                 html += "</" + lastType + ">";
               }
               html += "<" + type + ">";
@@ -886,10 +886,10 @@
 
     Parser.prototype.cleanUrl = function(url) {
       var matches;
-      if (!!(matches = url.match(/^\s*((http|https|ftp|mailto):[x80-xff_a-z0-9-\.\/%#@\?\+=~\|\,&\(\)]+)/i))) {
+      if (matches = url.match(/^\s*((http|https|ftp|mailto):[x80-xff_a-z0-9-\.\/%#@\?\+=~\|\,&\(\)]+)/i)) {
         matches[1];
       }
-      if (!!(matches = url.match(/^\s*([x80-xff_a-z0-9-\.\/%#@\?\+=~\|\,&]+)/i))) {
+      if (matches = url.match(/^\s*([x80-xff_a-z0-9-\.\/%#@\?\+=~\|\,&]+)/i)) {
         return matches[1];
       } else {
         return '#';
