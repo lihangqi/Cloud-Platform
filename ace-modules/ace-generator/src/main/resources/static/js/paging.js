@@ -185,7 +185,7 @@ layui.define(['layer', 'laypage', 'laytpl'], function (exports) {
 	 */
     function throwError(msg) {
         throw new Error(msg);
-    }
+    };
 
     var paging = new Paging();
     exports('paging', function (options) {

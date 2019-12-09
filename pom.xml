@@ -32,6 +32,7 @@
     <modules>
         <module>ace-gate</module>
         <module>ace-common</module>
+        <module>ace-api</module>
         <module>ace-auth</module>
         <module>ace-sidecar</module>
         <module>ace-control</module>
@@ -86,7 +87,7 @@
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
-                <version>1.2.60</version>
+                <version>1.2.33</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>

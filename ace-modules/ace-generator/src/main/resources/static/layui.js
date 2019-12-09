@@ -1,5 +1,5 @@
 /** layui-v1.0.9_rls MIT License By http://www.layui.com */
-!function (e) {
+;!function (e) {
     "use strict";
     var t = function () {
         this.v = "1.0.9_rls"

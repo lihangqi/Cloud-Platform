@@ -70,7 +70,7 @@ layui.define(['element', 'common'], function (exports) {
             var $cite = $(this).children('cite');
             if ($cite.text() === title) {
                 tabIndex = i;
-            }
+            };
         });
         return tabIndex;
     };
@@ -85,7 +85,7 @@ layui.define(['element', 'common'], function (exports) {
             var $cite = $(this).children('cite');
             if ($cite.text() === title) {
                 tabId = $(this).attr('lay-id');
-            }
+            };
         });
         return tabId;
     };
@@ -152,7 +152,7 @@ layui.define(['element', 'common'], function (exports) {
                         $(document).find('div.uiba-contextmenu').remove(); //移除右键菜单dom
                     }
                 });
-            }
+            };
             //切换到当前打开的选项卡
             element.tabChange(ELEM.tabFilter, that.getTabId(data.title));
 

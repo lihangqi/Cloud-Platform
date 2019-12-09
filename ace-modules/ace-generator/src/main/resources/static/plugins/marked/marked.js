@@ -4,7 +4,7 @@
  * https://github.com/chjj/marked
  */
 
-(function() {
+;(function() {
 
 /**
  * Block-Level Grammar
