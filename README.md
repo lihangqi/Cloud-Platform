@@ -25,6 +25,40 @@ Cloud`微`服务`化`开发平台`，具有统一授权、认证后台管理系�
 #### 熔断机制
 因为采取了服务的分布，为了避免服务之间的调用“雪崩”，采用了`Hystrix`的作为熔断器，避免了服务之间的“雪崩”。
 
+# 项目结构
+
+```
+ace-security
+    
+  ace-modules--------------公共服务模块（基础系统和JWT鉴权、搜索、OSS）
+  
+  ace-dev-base---------------通用脚手架（基础jwtsdk、开发常用工具类）
+   
+  ace-gate-----------------网关负载中心
+     
+  ace-control--------------运维中心（监控、链路）
+  
+  ace-sidebar--------------调用第三方语言服务
+```
+
+**环境须知!**
+- mysql一个，redis一个，sentiel一个，nacos注册中心一个
+- jdk1.8
+- IDE插件一个，lombok插件，具体百度即可
+- 搭建
+
+**须知**
+因为Cloud-Platform是一个前后端分离的项目，所以后端的服务必须先启动，在后端服务启动完成后，再启动前端的工程。
+
+**最多人问：代码有漏**
+下载完后端代码后，记得先安装lombok插件，否则你的IDE会报代码缺失。
+
+# 运行步骤
+- 先启动redis、redis、mysql以及nacos注册中心
+- 运行数据库脚本：依次运行数据库：ace-admin/db/init.sql、ace-auth-server/db/init.sql
+- 依次配置修改并导入nacos注册中心：ace-auth-server/src/main/resources/application.yml、ace-admin/src/main/resources/application.yml、ace-gate/src/main/resources/application.yml
+- 按顺序运行main类：AuthBootstrap（ace-auth-server）、AdminBootstrap（ace-admin）、GatewayServerBootstrap（ace-gate）
+
 ------
 
 ## 功能截图
